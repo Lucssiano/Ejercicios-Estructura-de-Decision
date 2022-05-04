@@ -16,4 +16,36 @@ using namespace std;
 
 int main()
 {
+  int numHistoria, imp;
+  char codigo;
+
+  cout << "Ingrese el numero de historia del paciente y el codigo de la prestacion ";
+  cin >> numHistoria >> codigo;
+
+  switch (codigo)
+  {
+  case 'A':
+  case 'a':
+    imp = 200;
+    break;
+
+  case 'D':
+  case 'd':
+    imp = 400;
+    break;
+
+  case 'F':
+  case 'f':
+    imp = 600;
+    break;
+
+  case 'M':
+  case 'm':
+  case 'T':
+  case 't':
+    imp = 1500;
+    break;
+  }
+
+  cout << "Numero de historia: " << numHistoria << " Codigo de la prestacion: " << codigo << " Importe a pagar: $" << imp;
 }

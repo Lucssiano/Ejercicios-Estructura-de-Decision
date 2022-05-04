@@ -10,9 +10,9 @@ int main()
   cout << "Ingrese tres lados de un triangulo ";
   cin >> lado1 >> lado2 >> lado3;
 
-  // ISOSCELES?
-  // if (lado1 == lado2 && lado1 != lado3)
-  //   cout << "El triangulo es isosceles";
+  // Isosceles considerando que lado 1 y lado 2 son los de la izquierda y derecha del triángulo
+  if (lado1 == lado2 && lado1 != lado3)
+    cout << "El triangulo es isosceles";
 
   if (lado1 == lado2 && lado1 == lado3)
     cout

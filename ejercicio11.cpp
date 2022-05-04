@@ -13,39 +13,52 @@ using namespace std;
 
 int main()
 {
-  int pUnidad, art, cant, imp;
+  int pUnidad, art, cant;
+  float imp;
 
   cout << "Ingrese el codigo de articulo y cantidad de productos a comprar ";
   cin >> art >> cant;
 
   switch (art)
   {
+
   case 1:
   case 10:
   case 100:
     pUnidad = 10;
+    imp = pUnidad * cant;
     break;
 
   case 2:
   case 22:
   case 222:
     pUnidad = 7;
+    if (cant > 10)
+    {
+      int primerCifra, segundaCifra;
+      primerCifra = (cant / 10);
+      segundaCifra = cant - (primerCifra * 10);
+      imp = (primerCifra * 10) * 6.5 + pUnidad * segundaCifra;
+    }
     break;
 
   case 3:
   case 33:
     pUnidad = 3;
-
-    // if (cant > 10)
-    //   imp = imp * 0.1;
+    imp = pUnidad * cant;
+    if (cant > 10)
+      imp = imp - ((pUnidad * cant) * 0.1);
 
     break;
 
   case 4:
   case 44:
     pUnidad = 2;
+    imp = pUnidad * cant;
     break;
   }
-  imp = pUnidad * cant;
+
+  cout << "ARTICULO: " << art << " CANTIDAD: " << cant << " IMPORTE A PAGAR: $" << imp;
+
   return 0;
 }
